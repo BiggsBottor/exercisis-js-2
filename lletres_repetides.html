@@ -12,11 +12,33 @@
         //Crea un array amb el teu nom on cada posició correspongui a una lletra.
         //Fes un bucle que recorri aquest array i mostri per consola cadascuna de les lletres.
         /* --- */
-        var nom = "Jonatán";
+        var nom = "Jon4tán";
         var arrNom = nom.split("");
 
-        for (var i = 0; i < arrNom.length; i++) {
+        /* for (var i = 0; i < arrNom.length; i++) {
             console.log(arrNom[i]);
+        } */
+
+        //FASE 2
+        //Al bucle, si la lletra és una vocal imprimeix a la consola: ‘He trobat la VOCAL: __’. 
+        //Sinó, imprimeix: ‘He trobat la CONSONTANT: __’.
+        //Si trobes un numero, mostra per pantalla: ‘Els noms de persones no contenen el número: __’.
+        /* --- */
+        var expCons = /([B-D]|[F-H]|[J-N]|[P-T]|[V-Z])/i;
+        var expVocs = /[a,e,i,o,u]|[á,é,í,ó,ú]|[à,è,ì,ò,ù]|[ä,ë,ï,ö,ü]/i;
+        var expNums = /[0-9]/;
+        var cons = new RegExp(expCons);
+        var vocs = new RegExp(expVocs);
+        var nums = new RegExp(expNums);
+        console.log(`Partim del nom: ${nom}`);
+        for (var i = 0; i < arrNom.length; i++) {
+            if (cons.test(arrNom[i])) {
+                console.log(`He trobat la CONSONTANT: ${arrNom[i]}`);
+            } else if (vocs.test(arrNom[i])) {
+                console.log(`He trobat la VOCAL: ${arrNom[i]}`);
+            } else if (nums.test(arrNom[i])) {
+                console.log(`Els noms de persones no contenen el número: ${arrNom[i]}`);
+            }
         }
     </script>
 </body>
