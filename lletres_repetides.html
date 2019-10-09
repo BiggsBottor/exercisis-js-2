@@ -30,7 +30,7 @@
         // var cons = new RegExp(expCons);
         // var vocs = new RegExp(expVocs);
         // var nums = new RegExp(expNums);
-        console.log(`Partim del nom: ${name}`);
+        //console.log(`Partim del nom: ${name}`);
         /* for (var i = 0; i < arrNom.length; i++) {
             if (cons.test(arrNom[i])) {
                 console.log(`He trobat la CONSONTANT: ${arrNom[i]}`);
@@ -40,10 +40,11 @@
                 console.log(`Els noms de persones no contenen el número: ${arrNom[i]}`);
             }
         } */
+
         //FASE 3
         //Emmagatzemar en un Map tant les lletres de la llista (o array) com el nombre de vegades que apareixen
         /* --- */
-        var contaLletres = new Map();
+        /* var contaLletres = new Map();
 
         //esta función aumenta en 1 la cantidad de veces en las que una letra es contada
         function addCount(value) {
@@ -55,7 +56,18 @@
         for (var i = 0; i < arrNom.length; i++) {
             contaLletres.has(arrNom[i]) ? contaLletres.set(arrNom[i], addCount(arrNom[i])) : contaLletres.set(arrNom[i], 1);
         }
-        console.log(contaLletres);
+        console.log(contaLletres); */
+
+        //FASE 4
+        //Crea una altra llista amb el teu cognom on cada posició correspongui a una lletra.
+        //Fusiona les dues llistes en una sola. A més, afegeix una posició amb un espai buit entre 
+        //la primera i la segona. És a dir, partim de la llista name i surname i al acabar l’execució 
+        //només tindrem una que es dirà fullName.
+        /* --- */
+        var surname = "Lledó";
+        var arrSurNom = surname.split("");
+        var fullName = arrNom.concat(" ", arrSurNom);
+        console.log(fullName);
     </script>
 </body>
 
